@@ -1,0 +1,143 @@
+/* CSS Reset & Variables */
+
+:root {
+  /* Brand Colors - High Energy Indie */
+  --brand-black: #0a0a0a;
+  --brand-charcoal: #121212;
+  --brand-lime: #ccff00;
+  --brand-pink: #ff0099;
+  --brand-cyan: #00ffff;
+  --brand-white: #f0f0f0;
+  --brand-grey: #888888;
+
+  /* Functional Colors */
+  --bg-primary: var(--brand-black);
+  --bg-secondary: var(--brand-charcoal);
+  --text-primary: var(--brand-white);
+  --text-secondary: var(--brand-grey);
+
+  /* Typography */
+  --font-display: "Anton", fantasy, sans-serif;
+  /* Fallback until font loaded */
+  --font-body: "Courier Prime", monospace;
+}
+
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  /* Grainy texture overlay simulation */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Typography Overhaul */
+.huge-text {
+  font-size: clamp(3.5rem, 12vw, 12rem);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  display: block;
+  margin: 0;
+}
+
+.script-text {
+  font-family: 'cursive', 'Brush Script MT', 'Dancing Script', local;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  color: var(--brand-yellow);
+  transform: rotate(-5deg);
+  display: inline-block;
+}
+
+/* Layout Split */
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.split-content {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.split-image {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(1) contrast(1.2);
+}
+
+.image-yellow-tint::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 250, 26, 0.4);
+  mix-blend-mode: multiply;
+}
+
+/* Gritty UI Elements */
+.btn-aggressive {
+  background: var(--brand-red);
+  color: #fff;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 800;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.btn-aggressive:hover {
+  transform: scale(1.05) skew(-3deg);
+  filter: brightness(1.2);
+}
+
+.logo-stamp {
+  background: var(--brand-red);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-weight: 900;
+  display: inline-block;
+  transform: rotate(-2deg);
+  border-radius: 4px;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+.section-padding {
+  padding: 120px 0;
+}
+
+@media (max-width: 992px) {
+  .split-layout {
+    grid-template-columns: 1fr;
+  }
+}

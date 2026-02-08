@@ -1,0 +1,141 @@
+.header {
+    position: fixed;
+    top: 0;
+    background: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.links a {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.links a:hover {
+    color: var(--brand-cyan);
+    text-shadow: 0 0 8px var(--brand-cyan);
+}
+
+/* Glitch Effect for Logo */
+.logo {
+    text-decoration: none;
+}
+
+.glitchText {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--brand-white);
+    position: relative;
+    letter-spacing: -0.05em;
+}
+
+.glitchText::before,
+.glitchText::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-primary);
+}
+
+.glitchText::before {
+    left: 2px;
+    text-shadow: -1px 0 var(--brand-pink);
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+.glitchText::after {
+    left: -2px;
+    text-shadow: -1px 0 var(--brand-cyan);
+    clip: rect(85px, 550px, 140px, 0);
+    animation: glitch-anim 2.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% {
+        clip: rect(10px, 9999px, 83px, 0);
+    }
+
+    20% {
+        clip: rect(69px, 9999px, 15px, 0);
+    }
+
+    40% {
+        clip: rect(32px, 9999px, 5px, 0);
+    }
+
+    60% {
+        clip: rect(8px, 9999px, 99px, 0);
+    }
+
+    80% {
+        clip: rect(50px, 9999px, 20px, 0);
+    }
+
+    100% {
+        clip: rect(93px, 9999px, 45px, 0);
+    }
+}
+
+@keyframes glitch-anim-2 {
+    0% {
+        clip: rect(65px, 9999px, 9px, 0);
+    }
+
+    20% {
+        clip: rect(4px, 9999px, 80px, 0);
+    }
+
+    40% {
+        clip: rect(90px, 9999px, 20px, 0);
+    }
+
+    60% {
+        clip: rect(12px, 9999px, 49px, 0);
+    }
+
+    80% {
+        clip: rect(34px, 9999px, 2px, 0);
+    }
+
+    100% {
+        clip: rect(81px, 9999px, 60px, 0);
+    }
+}
+
+@media (max-width: 768px) {
+    .links {
+        display: none;
+    }
+}

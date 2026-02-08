@@ -1,0 +1,211 @@
+.footer {
+    padding: 80px 0 40px;
+    background: #000;
+    padding: 0;
+    color: #fff;
+    overflow: hidden;
+}
+
+.quoteSection {
+    background: var(--brand-red);
+    padding: 10rem 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.quoteLeft {
+    flex: 1 1 500px;
+    max-width: 600px;
+    text-align: right;
+}
+
+.quoteRight {
+    flex: 1 1 500px;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    border-radius: 8px;
+}
+
+.topSection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    margin-bottom: 6rem;
+    align-items: center;
+}
+
+/* Ticket Stub Effect */
+.ticketStub {
+    flex: 1;
+    min-width: 300px;
+    background: var(--brand-lime);
+    color: var(--brand-black);
+    position: relative;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%,
+            0% 80%, 5% 75%, 0% 70%,
+            0% 60%, 5% 55%, 0% 50%,
+            0% 40%, 5% 35%, 0% 30%,
+            0% 20%, 5% 15%, 0% 10%);
+    padding: 2rem;
+    transform: rotate(-2deg);
+    transition: transform 0.3s ease;
+}
+
+.ticketStub:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.stubHeader {
+    border-bottom: 2px dashed var(--brand-black);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-body);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.stubBody {
+    text-align: center;
+}
+
+/* Brutalist Form */
+.formSection {
+    flex: 1.5;
+    min-width: 300px;
+}
+
+.formGrid {
+    display: flex;
+    gap: 1rem;
+}
+
+.inputGroup {
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.inputGroup label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--brand-grey);
+}
+
+.inputGroup input {
+    width: 100%;
+    background: transparent;
+    border: 2px solid var(--brand-grey);
+    padding: 1rem;
+    color: var(--brand-white);
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.inputGroup input:focus {
+    border-color: var(--brand-cyan);
+    box-shadow: 4px 4px 0 var(--brand-cyan);
+    background: rgba(0, 255, 255, 0.05);
+}
+
+.submitBtn {
+    width: 100%;
+    background: var(--brand-pink);
+    color: var(--brand-white);
+    border: none;
+    padding: 1.5rem;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.submitBtn:hover {
+    background: var(--brand-white);
+    color: var(--brand-pink);
+    border: 2px solid var(--brand-pink);
+}
+
+/* Bottom Links */
+.bottom {
+    border-top: 1px solid var(--brand-grey);
+    padding-top: 4rem;
+}
+
+.brandRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 6rem;
+}
+
+.bxp {
+    font-size: 10rem;
+    font-weight: 900;
+    line-height: 0.8;
+    margin: 0;
+    letter-spacing: -5px;
+}
+
+.cols {
+    display: flex;
+    gap: 5rem;
+    flex-wrap: wrap;
+}
+
+.col h4 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: #444;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.col a,
+.col p {
+    font-size: 0.95rem;
+    color: #888;
+    margin: 0;
+}
+
+.copyright {
+    margin-top: 8rem;
+    font-size: 0.8rem;
+    color: #333;
+}
+
+@media (max-width: 1200px) {
+    .quoteSection {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .brandRow {
+        flex-direction: column;
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .bxp {
+        font-size: 6rem;
+    }
+
+    .formRow {
+        grid-template-columns: 1fr;
+    }
+}
